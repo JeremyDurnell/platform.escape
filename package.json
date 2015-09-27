@@ -1,0 +1,22 @@
+{
+  "name": "platform.escape",
+  "version": "1.0.0",
+  "description": "Simple platform based on HTML5 canvas",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeremyDurnell/platform.escape.git"
+  },
+  "author": "Jeremy Durnell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeremyDurnell/platform.escape/issues"
+  },
+  "homepage": "https://github.com/JeremyDurnell/platform.escape#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
