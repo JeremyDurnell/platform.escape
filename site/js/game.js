@@ -17,7 +17,7 @@ var boxes = [];
 var winBoxes = [];
 
 winBoxes.push({x: width - 100, y: height - 2, width: 100, height: 50}); // invisible floor
-winBoxes.push({x: width - 1, y: 0, width: 1, height: height});// invisible right bound
+winBoxes.push({x: width - 1, y: 0, width: 1, height: height}); // invisible right bound
 
 // platforms
 boxes.push({x: 0, y: 100, width: 10, height: height-100}); // left bound
