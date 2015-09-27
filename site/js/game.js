@@ -7,7 +7,7 @@ var canvas = document.createElement("canvas"),
     ctx = canvas.getContext("2d"),
     width = 600,
     height = 300,
-    contestant = { x: (width - 100) / 2, y: height - 15, width: 5, height: 5, speed: 3, velocityX: 0, velocityY: 0, jumping: false, grounded: false },
+    contestant = { /*x: (width - 100) / 2, y: height - 15*/ x: 388, y: 157, width: 5, height: 5, speed: 3, velocityX: 0, velocityY: 0, jumping: false, grounded: false },
     keys = [],
     friction = 0.8,
     gravity = 0.3,
@@ -26,8 +26,8 @@ boxes.push({x: width - 110, y: 100, width: 10, height: height - 100}); //right b
 boxes.push({x: 25, y: 220, width: 80, height: 10});
 boxes.push({x: 100, y: 250, width: 80, height: 10});
 boxes.push({x: 125, y: 165, width: 80, height: 10});
-boxes.push({x: 285, y: 125, width: 80, height: 10});
-boxes.push({x: 450, y: 125, width: 30, height: 10});
+boxes.push({x: 289, y: 125, width: 80, height: 10});
+boxes.push({x: 386, y: 157, width: 35, height: 10});
 
 canvas.setAttribute("style", "margin:200px");
 canvas.width = width;
@@ -96,7 +96,9 @@ function update() {
     contestant.y += contestant.velocityY;
     ctx.fill();
     ctx.fillStyle = "red";
-    ctx.fillRect(contestant.x, contestant.y, contestant.width, contestant.height);
+    ctx.beginPath();
+    ctx.arc(contestant.x, contestant.y, contestant.width, contestant.height, 0, 2 * Math.PI, false);
+    ctx.fill();
     requestAnimationFrame(update);
 }
 
