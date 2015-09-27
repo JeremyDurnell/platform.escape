@@ -2,6 +2,8 @@
 **Platform Escape** is a simple 2D platform game based on an HTML5 canvas.  Use the **arrow keys** or **W,A,S,D** to move
 the sprite around. Try to escape.
 
+Try it at: http://platformescape.elasticbeanstalk.com/
+
 ## Running the Project ##
 You must have nodejs installed.
 

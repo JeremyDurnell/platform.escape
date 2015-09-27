@@ -3,7 +3,7 @@
     window.requestAnimationFrame = requestAnimationFrame;
 })();
 
-var canvas = document.createElement("canvas"),
+var canvas = document.getElementById("theCanvas"),
     ctx = canvas.getContext("2d"),
     width = 600,
     height = 300,
@@ -27,12 +27,12 @@ boxes.push({x: 25, y: 220, width: 80, height: 10});
 boxes.push({x: 100, y: 250, width: 80, height: 10});
 boxes.push({x: 125, y: 165, width: 80, height: 10});
 boxes.push({x: 289, y: 125, width: 80, height: 10});
-boxes.push({x: 386, y: 157, width: 35, height: 10});
+boxes.push({x: 386, y: 157, width: 38, height: 10});
 
-canvas.setAttribute("style", "margin:200px");
+
 canvas.width = width;
 canvas.height = height;
-document.body.appendChild(canvas);
+
 
 function update() {
     if (keys[38] || keys[32] || keys[87]) {
@@ -59,7 +59,7 @@ function update() {
     contestant.velocityX *= friction;
     contestant.velocityY += gravity;
     ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "rgb(107,25,25)";
     ctx.beginPath();
     contestant.grounded = false;
 
@@ -78,9 +78,9 @@ function update() {
         }
     }
 
-    for (var i = 0; i < winBoxes.length; i++) {
-        if (collisionCheck(contestant, winBoxes[i])) {
-            score++
+    for (var k = 0; k < winBoxes.length; k++) {
+        if (collisionCheck(contestant, winBoxes[k])) {
+            score++;
             contestant.x = (width - 100) / 2;
             contestant.y = height - 15;
         }
@@ -95,7 +95,7 @@ function update() {
     contestant.x += contestant.velocityX;
     contestant.y += contestant.velocityY;
     ctx.fill();
-    ctx.fillStyle = "red";
+    ctx.fillStyle = "rgb(64,31,232)";
     ctx.beginPath();
     ctx.arc(contestant.x, contestant.y, contestant.width, contestant.height, 0, 2 * Math.PI, false);
     ctx.fill();
