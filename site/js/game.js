@@ -7,7 +7,7 @@ var canvas = document.getElementById("theCanvas"),
     ctx = canvas.getContext("2d"),
     width = 600,
     height = 300,
-    contestant = { x: (width - 100) / 2, y: height - 15, width: 5, height: 5, speed: 3, velocityX: 0, velocityY: 0, jumping: false, grounded: false },
+    contestant = {x: (width - 100) / 2, y: height - 15, width: 5, height: 5, speed: 3, velocityX: 0, velocityY: 0, jumping: false, grounded: false },
     keys = [],
     friction = 0.8,
     gravity = 0.3,
@@ -29,10 +29,8 @@ boxes.push({x: 125, y: 165, width: 80, height: 10});
 boxes.push({x: 289, y: 125, width: 80, height: 10});
 boxes.push({x: 386, y: 157, width: 38, height: 10});
 
-
 canvas.width = width;
 canvas.height = height;
-
 
 function update() {
     if (keys[38] || keys[32] || keys[87]) {
@@ -86,7 +84,7 @@ function update() {
         }
     }
 
-    updateScore(score);
+    renderScore(score);
 
     if (contestant.grounded) {
         contestant.velocityY = 0;
@@ -102,10 +100,9 @@ function update() {
     requestAnimationFrame(update);
 }
 
-function updateScore(score) {
+function renderScore(score) {
     if (score > 0) {
-        ctx.fillStyle = "black";
-        ctx.font = "24px Helvetica";
+        ctx.font = "bold 24px Helvetica";
         ctx.textAlign = "left";
         ctx.textBaseline = "bottom";
         ctx.fillText("Winning: " + score, 50, 50);
